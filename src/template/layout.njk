@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html class="h-100">
+<head>
+{%- include "common/meta.njk" %}
+</head>
+
+<body class="d-flex flex-column h-100">
+
+{%- include "common/navigation.njk" %}
+
+{% block yield %}
+YIELD
+{% endblock %}
+
+{%- include "common/footer.njk" %}
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+{# Use paths from CONFIG.ENTRY + CONFIG.PAGE.BASEDIR #}
+{# Default basedir is `./src/template` defined as CONFIG.PAGE.BASEDIR #}
+{% extends "layout.njk" %}
+
+{% block yield %}
+<main role="main" class="flex-shrink-0" style="margin-top: 70px; margin-bottom: 70px;">
+
+  <script src="https://kit.fontawesome.com/500968666c.js" crossorigin="anonymous"></script>
+
+  <style>
+    .message span {
+      padding: 1px 4px 1px;
+      border-radius: 6px;
+      line-height: 1.85em;
+    }
+    .audio-state-icon {
+      padding-left: .2em;
+      width: 22px;
+      margin-right: 4px;
+    }
+    .readable-paragraph {
+      position: relative;
+      top: 0;
+      left: 0;
+      background-color: rgba(222,222,222, .5);
+      transition: all .3s ease;
+    }
+    .readable-paragraph:hover {
+      cursor: pointer;
+      background-color: rgba(144, 212, 244, .4);
+    }
+
+    .readable-paragraph.audio-attach-active {
+      background: linear-gradient(113deg, #7af0d1, #96e2ff, #fff5e7);
+      background-size: 800% 800%;
+      -webkit-animation: AnimationName 5s ease infinite;
+      -moz-animation: AnimationName 5s ease infinite;
+      animation: AnimationName 5s ease infinite;
+      top: -2px;
+      left: -2px;
+    }
+    @-webkit-keyframes AnimationName {
+        0%{background-position:17% 0%}
+        50%{background-position:84% 100%}
+        100%{background-position:17% 0%} }
+    @-moz-keyframes AnimationName {
+        0%{background-position:17% 0%}
+        50%{background-position:84% 100%}
+        100%{background-position:17% 0%} }
+    @keyframes AnimationName {
+        0%{background-position:17% 0%}
+        50%{background-position:84% 100%}
+        100%{background-position:17% 0%} }
+  </style>
+
+
+  <div class="container">
+
+    <h1 class="mt-3 mb-5">Readable Sample</h1>
+
+    <h3 class="mb-3">Jodie Foster</h3>
+    <div class="message">
+      <span class="readable-paragraph" data-audio-url="https://the-talks.com/wp-content/uploads/2018/03/Jodie-Foster-01.mp3">
+      My mom has dementia and to watch as she shed part of her socialization… What we got back down to was this core of fear. Everything was about fear — to see how much fear is essential in who we are as animals is amazing.</span>
+      <span>I grew up in a single parent home house so my mom is a huge part of my life, the most significant relationship in my life that will ever be. She is my work life, and that whole process from birth until the time that you say goodbye, I really understand from both sides, from a daughter’s side and also from having two children.</span>
+    </div>
+
+    <hr>
+
+    <h3 class="mb-3">Al-Pacino</h3>
+    <div class="message">
+      <span class="readable-paragraph" data-audio-url="https://the-talks.com/wp-content/uploads/2015/08/al-pacino-05.mp3">
+      When you do it long enough, you want to keep yourself open. You don’t want to close off because vulnerability is important. You can’t let your skin get too thick. Like Brecht says in that great play he wrote, at a young age, too. At 22 he wrote In the Jungle of Cities and one of the characters says, “Man’s skin is too thin for this world.” So, he sees that it grows thicker and thicker, until finally he is bumping into things and not feeling them anymore.
+      </span>
+    </div>
+
+</main>
+{% endblock %}
